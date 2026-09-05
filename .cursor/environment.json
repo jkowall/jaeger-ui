@@ -4,7 +4,7 @@
   "terminals": [
     {
       "name": "dev-server",
-      "command": "export NVM_DIR=\"${NVM_DIR:-$HOME/.nvm}\"; . \"$NVM_DIR/nvm.sh\"; nvm use >/dev/null; export PATH=\"$NVM_DIR/versions/node/$(nvm version)/bin:$PATH\"; corepack enable pnpm >/dev/null 2>&1 || true; pnpm start"
+      "command": "export NVM_DIR=\"${NVM_DIR:-$HOME/.nvm}\"; . \"$NVM_DIR/nvm.sh\"; nvm use >/dev/null; export PATH=\"$NVM_BIN:$PATH\"; corepack enable pnpm >/dev/null 2>&1 || true; pnpm start"
     }
   ],
   "ports": [5173]

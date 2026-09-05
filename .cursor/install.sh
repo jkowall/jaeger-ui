@@ -21,10 +21,10 @@ nvm install
 nvm use
 
 # Force the nvm-provided Node ahead of any runtime-injected node shim (e.g.
-# /exec-daemon/node) so the repo-pinned Node version is actually used. The bin
-# dir is derived from the active nvm version directly (not via PATH lookup, which
-# the shim would otherwise poison).
-export PATH="$NVM_DIR/versions/node/$(nvm version)/bin:$PATH"
+# /exec-daemon/node) so the repo-pinned Node version is actually used. $NVM_BIN
+# is set by `nvm use` to the active version's bin dir, so it is not poisoned by
+# a shim already on PATH (unlike `nvm which current`).
+export PATH="$NVM_BIN:$PATH"
 
 corepack enable pnpm
 
