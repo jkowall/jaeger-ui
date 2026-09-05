@@ -20,6 +20,10 @@ fi
 nvm install
 nvm use
 
+# Force the nvm-provided Node ahead of any runtime-injected node shim (e.g.
+# /exec-daemon/node) so the repo-pinned Node version is actually used.
+export PATH="$(dirname "$(nvm which current)"):$PATH"
+
 corepack enable pnpm
 
 pnpm install --frozen-lockfile
